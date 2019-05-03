@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: beevelop/ionic
+    steps:
+      - checkout
+      - run:
+          name: Install node modules
+          command: |
+            npm install -g ionic@4.12.0
+            npm install -g cordova@9.0.0
+            npm install
+      - run:
+          name: Update Android SDK Build-Tools
+          command: yes | /opt/android/tools/bin/sdkmanager 'build-tools;28.0.3' || true
+      - run:
+          name: Building android
+          command: ionic cordova build android --debug
+      - store_artifacts:
+          path: /root/project/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+          destination: app-debug.apk
+      - run:
+          name: Upload to deployGate
+          command: curl -F "token=${DEPLOY_GATE_API_KEY}" -F "file=@/root/project/platforms/android/app/build/outputs/apk/debug/app-debug.apk" -F "message=deployed" https://deploygate.com/api/users/orinbou/apps
