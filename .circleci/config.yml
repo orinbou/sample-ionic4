@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: beevelop/ionic
+    branches:
+      only:
+        - master
     steps:
       - checkout
       - run:
