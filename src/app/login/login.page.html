@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>ログイン</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Enter your E-mail</ion-label>
+        <ion-input type="text" [(ngModel)]="auth.email" name="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="auth.password" name="password" required></ion-input>
+      </ion-item>
+    </ion-list>
+    <p>
+      <ion-button
+        expand="block" color="primary" type="button"
+        (click)="login()"
+        [disabled]="!auth.email || !auth.password">ログイン</ion-button>
+    </p>
+  </form>
+</ion-content>
