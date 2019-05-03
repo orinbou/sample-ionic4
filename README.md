@@ -1,9 +1,9 @@
-# ionic-sample-app
+# ionic4-sample-app
 
-[![CircleCI](https://circleci.com/gh/orinbou/sample-ionic.svg?style=shield)](https://circleci.com/gh/orinbou/sample-ionic)
-[![CircleCI](https://circleci.com/gh/orinbou/sample-ionic.svg?style=svg)](https://circleci.com/gh/orinbou/sample-ionic)
+[![CircleCI](https://circleci.com/gh/orinbou/sample-ionic.svg?style=shield)](https://circleci.com/gh/orinbou/sample-ionic4)
+[![CircleCI](https://circleci.com/gh/orinbou/sample-ionic.svg?style=svg)](https://circleci.com/gh/orinbou/sample-ionic4)
 
-> This is a ionic sample project
+> This is a ionic4 sample project
 
 本サンプルは下記バージョンを使用します。
 ```
