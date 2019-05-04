@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {API_URL_ENDPOINT, MESSAGE} from '../app.constant';
 import {ApiCallService} from '../providers/api-call.service';
-import {Router} from '@angular/router';
 import {NavController, ToastController} from '@ionic/angular';
-import {HomePage} from '../home/home.page';
 
 @Component({
   selector: 'app-login',
@@ -19,34 +17,25 @@ export class LoginPage implements OnInit {
       private toastCtrl: ToastController,
       private readonly apiCallService: ApiCallService
   ) {
+    // no-op
+  }
+
+  ngOnInit() {
     // TODO: 開発用の初期値を設定
     this.auth.email = 'sample@sample.com';
     this.auth.password = 'password';
   }
 
-  ngOnInit() {
-  }
-
   /**
    * ログイン処理
    */
-  login() {
-    if (this.auth.email && this.auth.password) {
-      // ログインAPI通信
-      this.callLoginApi(this.auth);
-    }
-  }
-
-  /**
-   * ログインAPI通信
-   */
-  callLoginApi(body: any) {
-    this.apiCallService.callByPost(API_URL_ENDPOINT.login, body)
+  login(body: any) {
+    this.apiCallService.callByPost(API_URL_ENDPOINT.login, this.auth)
       .subscribe((response) => {
         if (response.message === '正常終了') {
           console.log('ログイン成功');
           // HOMEへ遷移する
-          this.navCtrl.navigateRoot('/home').then();
+          this.navCtrl.navigateRoot('/tabs').then();
         } else {
           console.log('ログイン失敗');
           this.showToastMessage(MESSAGE.loginError);
