@@ -2,6 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/orinbou/sample-ionic4.svg?style=shield)](https://circleci.com/gh/orinbou/sample-ionic4)
 [![CircleCI](https://circleci.com/gh/orinbou/sample-ionic4.svg?style=svg)](https://circleci.com/gh/orinbou/sample-ionic4)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > This is a ionic4 sample project
 

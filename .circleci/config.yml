@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: beevelop/ionic
+      - image: beevelop/ionic:v4.12.0
     branches:
       only:
         - master
