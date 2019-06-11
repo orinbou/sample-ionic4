@@ -110,3 +110,4 @@ ionic start sample-ionic4 blank --type=angular
 | [ionic github page](https://github.com/ionic-team/ionic) | ionic github page |
 | [Ionic DevApp](https://ionicframework.com/docs/building/running#ionic-devapp) | 実機デバッグ用ツール |
 | [Sample API](https://github.com/orinbou/sample-api) | バックエンド（サーバサイド） |
+
