@@ -15,7 +15,6 @@ pipeline {
                 echo '########################################'
                 sh 'cat /etc/os-release'
                 sh 'pwd'
-                //sh 'git clone -b jenkins/try01 https://github.com/orinbou/sample-ionic4' ./'
             }
         }
         stage('ビルド実行') {
@@ -67,19 +66,11 @@ pipeline {
             echo '########################################'
             echo '★ ビルド成功'
             echo '########################################'
-            script {
-                // def msg = "[info][title]ビルド成功 ${env.JOB_NAME} - #${env.BUILD_NUMBER}[/title] app-url: $APP_URL result: ${env.BUILD_URL}[/info](cracker)"
-                // notify(msg)
-            }
         }
         failure {
             echo '########################################'
             echo '★ ビルド失敗'
             echo '########################################'
-            script {
-                // def msg = "[info][title]ビルド失敗 ${env.JOB_NAME} - #${env.BUILD_NUMBER}[/title] app-url: $APP_URL result: ${env.BUILD_URL}[/info](devil)"
-                // notify(msg)
-            }
         }
     }
 }
