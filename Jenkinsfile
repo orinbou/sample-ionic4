@@ -15,7 +15,7 @@ pipeline {
                 echo '########################################'
                 sh 'cat /etc/os-release'
                 sh 'pwd'
-                sh 'git clone -b jenkins/try01 https://github.com/orinbou/sample-ionic4' ./
+                sh 'git clone -b jenkins/try01 https://github.com/orinbou/sample-ionic4' ./'
             }
         }
         stage('ビルド実行') {
