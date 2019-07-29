@@ -23,18 +23,16 @@ pipeline {
                 echo '########################################'
                 echo '★ ビルド実行'
                 echo '########################################'
-                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
-                    // Install node modules
-                    sh 'npm --version'
-                    sh 'npm install -g ionic@4.12.0'
-                    sh 'npm install -g cordova@9.0.0'
-                    sh 'npm install'
-                    sh 'npm --version'
-                    // Update Android SDK Build-Tools
-                    sh 'yes | /opt/android/tools/bin/sdkmanager build-tools;28.0.3 || true'
-                    // Building android
-                    sh 'ionic cordova build android --debug'
-                }
+                // Install node modules
+                sh 'npm --version'
+                sh 'npm install -g ionic@4.12.0'
+                sh 'npm install -g cordova@9.0.0'
+                sh 'npm install'
+                sh 'npm --version'
+                // Update Android SDK Build-Tools
+                sh 'yes | /opt/android/tools/bin/sdkmanager build-tools;28.0.3 || true'
+                // Building android
+                sh 'ionic cordova build android --debug'
             }
         }
         stage('テスト実行') {
