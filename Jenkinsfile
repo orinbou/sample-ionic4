@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // Install node modules
                 sh 'npm --version'
-                sh 'sudo npm install -g ionic@4.12.0'
+                sh 'npm install -g ionic@4.12.0'
                 sh 'npm install -g cordova@9.0.0'
                 sh 'npm install'
                 sh 'npm --version'
