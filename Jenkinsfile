@@ -1,4 +1,4 @@
-/* Jenkinsfile Sample */
+/* Jenkinsfile for sample-ionic4 */
 pipeline {
     agent {
         dockerfile {
@@ -8,7 +8,7 @@ pipeline {
     }
     /* BuildStep */
     stages {
-        stage('## environment ##') {
+        stage('prepare') {
             steps {
                 sh 'whoami'
                 sh 'cat /etc/os-release'
@@ -16,7 +16,7 @@ pipeline {
                 sh 'ls -la'
             }
         }
-        stage('## build ##') {
+        stage('build') {
             steps {
                 // Install node modules
                 sh 'npm --version'
@@ -30,7 +30,7 @@ pipeline {
                 sh 'ionic cordova build android --debug'
             }
         }
-        stage('## deploy ##') {
+        stage('deploy') {
             steps {
                 echo 'TODO: Sorry! Nothing Now.'
             }
