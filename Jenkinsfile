@@ -21,6 +21,8 @@ pipeline {
                 sh 'ls -la /opt'
                 sh 'ls -la /opt/node'
                 sh 'ls -la /opt/node/lib'
+                sh 'ls -la /opt/node/bin'
+                sh 'ls -la /opt/node/bin/ionic'
             }
         }
         stage('★ビルド実行') {
