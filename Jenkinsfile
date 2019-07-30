@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage('★ビルド準備') {
             steps {
+                sh 'whoami'
                 sh 'cat /etc/os-release'
                 sh 'pwd'
             }
@@ -43,7 +44,7 @@ pipeline {
     post {
         always {
             echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
+            //deleteDir() /* clean up our workspace */
         }
         success {
             echo '★ ビルド成功'
