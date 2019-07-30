@@ -3,7 +3,7 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile'
-            args '-u root -e HOME=.'
+            args '-u root'
         }
     }
     /* BuildStep */
