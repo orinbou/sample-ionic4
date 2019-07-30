@@ -3,6 +3,7 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile'
+            args '-e HOME=.'
         }
     }
     /* BuildStep */
@@ -11,6 +12,10 @@ pipeline {
             steps {
                 sh 'cat /etc/os-release'
                 sh 'pwd'
+                sh 'ls -la'
+                sh 'cd'
+                sh 'pwd'
+                sh 'ls -la'
             }
         }
         stage('★ビルド実行') {
