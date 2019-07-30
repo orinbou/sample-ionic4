@@ -23,6 +23,10 @@ pipeline {
                 sh 'ls -la /opt/node/lib'
                 sh 'ls -la /opt/node/bin'
                 sh 'ls -la /opt/node/bin/ionic'
+                sh 'ls -la /home'
+                sh 'cd ~/'
+                sh 'pwd'
+                sh 'ls -la'
             }
         }
         stage('★ビルド実行') {
