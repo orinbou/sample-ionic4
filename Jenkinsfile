@@ -1,9 +1,8 @@
 /* Jenkinsfile Sample */
 pipeline {
     agent {
-        docker {
-            image 'beevelop/ionic:v4.12.0'
-            args '-e HOME=.'
+        dockerfile {
+            filename 'Dockerfile'
         }
     }
     /* BuildStep */
@@ -25,7 +24,7 @@ pipeline {
                 // Update Android SDK Build-Tools
                 sh 'yes | /opt/android/tools/bin/sdkmanager build-tools;28.0.3 || true'
                 // Building android
-                sh 'sudo ionic cordova build android --debug'
+                sh 'ionic cordova build android --debug'
             }
         }
         stage('★テスト実行') {
