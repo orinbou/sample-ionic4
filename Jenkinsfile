@@ -1,8 +1,8 @@
 /* Jenkinsfile for sample-ionic4 */
 pipeline {
     agent {
-        dockerfile {
-            filename 'Dockerfile'
+        docker {
+            image 'beevelop/ionic:v4.12.0'
             args '-u root'
         }
     }
