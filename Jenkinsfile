@@ -8,7 +8,7 @@ pipeline {
     }
     /* BuildStep */
     stages {
-        stage('prepare') {
+        stage('Prepare') {
             steps {
                 sh 'whoami'
                 sh 'cat /etc/os-release'
@@ -16,7 +16,7 @@ pipeline {
                 sh 'ls -la'
             }
         }
-        stage('build') {
+        stage('Build') {
             steps {
                 // Install node modules
                 sh 'npm --version'
@@ -30,7 +30,7 @@ pipeline {
                 sh 'ionic cordova build android --debug'
             }
         }
-        stage('deploy') {
+        stage('Deploy') {
             steps {
                 echo 'TODO: Sorry! Nothing Now.'
             }
