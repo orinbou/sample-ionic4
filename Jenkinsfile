@@ -25,7 +25,7 @@ pipeline {
                 sh 'npm install'
                 sh 'npm --version'
                 // Update Android SDK Build-Tools
-                sh 'yes | /opt/android/tools/bin/sdkmanager build-tools;28.0.3 || true'
+                sh "yes | /opt/android/tools/bin/sdkmanager 'build-tools;28.0.3' || true"
                 // Building android
                 sh 'ionic cordova build android --debug'
             }
