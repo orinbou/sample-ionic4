@@ -8,7 +8,7 @@ pipeline {
     }
     /* BuildStep */
     stages {
-        stage('★ビルド準備') {
+        stage('## environment ##') {
             steps {
                 sh 'whoami'
                 sh 'cat /etc/os-release'
@@ -16,7 +16,7 @@ pipeline {
                 sh 'ls -la'
             }
         }
-        stage('★ビルド実行') {
+        stage('## build ##') {
             steps {
                 // Install node modules
                 sh 'npm --version'
@@ -30,28 +30,23 @@ pipeline {
                 sh 'ionic cordova build android --debug'
             }
         }
-        stage('★テスト実行') {
-            steps {
-                echo 'TODO: Sorry! Nothing Now.'
-            }
-        }
-        stage('★デプロイ実行') {
+        stage('## deploy ##') {
             steps {
                 echo 'TODO: Sorry! Nothing Now.'
             }
         }
     }
-    /* Build終了後の処理 */
+    /* Clean up */
     post {
         always {
             echo 'One way or another, I have finished'
             //deleteDir() /* clean up our workspace */
         }
         success {
-            echo '★ ビルド成功'
+            echo 'Build success!'
         }
         failure {
-            echo '★ ビルド失敗'
+            echo 'Build failed!'
         }
     }
 }
