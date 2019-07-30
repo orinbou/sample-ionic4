@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage('★ビルド準備') {
             steps {
+                sh 'who'
                 sh 'cat /etc/os-release'
                 sh 'pwd'
                 sh 'ls -la'
