@@ -3,30 +3,15 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile'
-            args '-u root'
+            args '-u root -e HOME=.'
         }
     }
     /* BuildStep */
     stages {
         stage('★ビルド準備') {
             steps {
-                sh 'who'
                 sh 'whoami'
                 sh 'cat /etc/os-release'
-                sh 'pwd'
-                sh 'ls -la'
-                sh 'cd'
-                sh 'pwd'
-                sh 'ls -la'
-                sh 'ls -la /'
-                sh 'ls -la /root'
-                sh 'ls -la /opt'
-                sh 'ls -la /opt/node'
-                sh 'ls -la /opt/node/lib'
-                sh 'ls -la /opt/node/bin'
-                sh 'ls -la /opt/node/bin/ionic'
-                sh 'ls -la /home'
-                sh 'cd ~/'
                 sh 'pwd'
                 sh 'ls -la'
             }
