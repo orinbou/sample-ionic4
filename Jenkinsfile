@@ -16,6 +16,10 @@ pipeline {
                 sh 'cd'
                 sh 'pwd'
                 sh 'ls -la'
+                sh 'ls -la /'
+                sh 'ls -la /opt'
+                sh 'ls -la /opt/node'
+                sh 'ls -la /opt/node/lib'
             }
         }
         stage('★ビルド実行') {
