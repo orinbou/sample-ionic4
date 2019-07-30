@@ -11,6 +11,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 sh 'whoami'
+                sh 'rm -rf ./platforms'
                 sh 'cat /etc/os-release'
                 sh 'pwd'
                 sh 'ls -la'
